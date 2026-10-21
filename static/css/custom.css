@@ -1,0 +1,120 @@
+.navbar-brand img {
+    height: 50px; /* or smaller, adjust to your design */
+    width: auto;
+  }
+
+
+.info-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.info-image img {
+    max-width: 500px;
+    width: 100%;
+    border-radius: 16px;
+}
+
+.info-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.info-text h2 {
+    font-size: 36px;
+    color: black;
+    margin-bottom: 20px;
+    font-family: "Poppins", sans-serif;
+}
+
+.info-text p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: rgb(56, 45, 45);
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* for the image in section after main page*/
+
+.custom-img {
+    width: auto;
+    height: auto;
+    border-radius: 0.5rem;
+    margin-top: -20rem;
+    margin-left: auto;
+    float: right;
+    margin-right: 8rem;
+    box-shadow: none;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+  
+  .custom-img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Register image custom icon*/
+
+  .img-liquid {
+    max-width: 100%;
+    height: auto;
+    padding-top: 150px;
+}
+
+ /* login image custom icon*/
+  
+  .img-water{
+    max-width: 60%;
+    height: auto;
+    margin-top: 32px;
+    margin-left: 105px;
+  }
+
+  /* avatar upload page view sign*/
+
+  .view-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: #001f3f;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+/* Hover effect */
+.view-btn:hover {
+    background-color: #ffffff;
+    color: #001f3f;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* login section shadow box*/
+.custom-login-form {
+  background: #001f3f; /* Changed to black with opacity */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  padding: 40px 30px;
+  max-width: 600px;
+  margin: 60px auto;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  z-index: 1;
+}
+
+
+
+ 

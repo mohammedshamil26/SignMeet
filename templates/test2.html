@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jitsi Meet Embed with Name</title>
+</head>
+<body>
+ 
+  <input type="hidden" id="username" placeholder="Enter your name" value="{{name}}">
+  <!--<button onclick="joinMeeting()">Join Meeting</button>-->
+  <div id="meet"></div>
+  <script src="https://meet.jit.si/external_api.js"></script>
+  <script>
+  //document.querySelector('#meet')
+    //function joinMeeting() {
+      const username = document.getElementById('username').value;
+      const domain = 'meet.jit.si';
+      const roomName = 'SignMeet';
+	  const meetingURL = "https://meet.jit.si/${roomName}";
+      const options = {
+        roomName: roomName,
+        width: 550,
+        height: 390,
+        parentNode: undefined,
+        userInfo: {
+          displayName: username
+        }
+      };
+      const api = new JitsiMeetExternalAPI(domain, options);
+	  
+	  //window.open(meetingURL, '_blank');
+	  //window.location.href = meetingURL;
+    //}
+  </script>
+</body>
+</html>

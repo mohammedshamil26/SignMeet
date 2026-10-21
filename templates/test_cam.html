@@ -1,0 +1,173 @@
+<html lang="en">
+
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+   
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+ 
+     <!-- Site Metas -->
+    <title>SignMeet</title>  
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="../static/images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="../static/images/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="../static/style.css">    
+    <!-- ALL VERSION CSS -->
+    <link rel="stylesheet" href="../static/css/versions.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="../static/css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../static/css/custom.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body class="app_version" data-spy="scroll" data-target="#navbarApp" data-offset="98">
+
+    <!-- LOADER -->
+    <!-- <div id="preloader">
+        <img class="preloader" src="images/loaders/loader-app.gif" alt="">
+    </div> end loader -->
+    <!-- END LOADER -->
+	<div class="top-bar">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					<div class="left-soi">
+						<!--<ul>
+							<li class="social-links"><a href="#"><i class="fa fa-apple"></i></a></li>
+							<li class="social-links"><a href="#"><i class="fa fa-android"></i></a></li>
+							<li class="social-links"><a href="#"><i class="fa fa-windows"></i></a></li>
+						</ul>-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <header class="header header_style_01">
+        <nav class="navbar header-nav navbar-expand-lg">
+            <div class="container">
+				<a class="navbar-brand" href="/"><img src="../static/images/logos/logo-app.png" alt="image"></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarApp" aria-controls="navbarApp" aria-expanded="false" aria-label="Toggle navigation">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarApp">
+                    <ul class="navbar-nav">
+                       
+                        <li><a class="nav-link active" href="/test_cam">Meet</a></li>
+                        <li><a class="nav-link" href="/logout">Logout</a></li>
+                        
+                        
+                    </ul>
+                </div>
+          </div>
+        </nav>
+    </header>
+
+ 
+    <div id="features" class="section wb">
+        <div class="container">
+            
+            <div class="row">
+                  
+				<!--The First row-->  
+				<div class="col-md-4">
+					<form name="form1" method="post">
+			<select name="language" class="form-control" onChange="this.form.submit()" required>
+						<option value="">-Select Language-</option>
+						<option value="ta">Tamil</option>
+						<option value="hi">Hindi</option>						
+						<option value="ml">Malayalam</option>
+						<option value="kn">Kannada</option>
+						<option value="te">Telugu</option>
+						<option value="mr">Marathi</option>
+						<option value="ur">Urdu</option>
+						<option value="bn">Bengali</option>
+						<option value="gu">Gujarati</option>
+						<option value="fr">French</option>
+						<option value="en">English</option>
+						
+						<!--
+						ta-in
+						hi-in
+						ml-in
+						kn-in
+						fr-ch
+						<option value="e">English</option>
+						<option value="h">Hindi</option>
+						<option value="t">Tamil</option>
+						<option value="m">Malayalam</option>-->
+						</select>
+						</form>
+						
+						{% if uname==user %}
+						<iframe src="/autocapture" width="95%" height="400" frameborder="0" style="display:none"></iframe>	
+					 	{% endif %}
+						
+						<iframe src="/test_voice" width="90%" height="550" frameborder="0" scrolling="no"></iframe>
+						
+						
+				</div><!-- .row .left-row -->
+			  
+				<div class="col-md-8">
+					
+					<iframe src="/test2?name={{name}}" width="100%" height="400" frameborder="0"></iframe>
+				  
+				  <p></p>
+				  <iframe src="/test_pro3" width="600" height="200" frameborder="0"></iframe>
+				  <p></p>
+				  
+				</div>
+				<!--The Second row-->
+				
+			  
+			</div><!--Highlights close-->
+        </div><!-- end container -->
+    </div><!-- end section -->
+
+   
+
+   
+ 
+    <div class="copyrights">
+        <div class="container">
+            <div class="footer-distributed">
+                <div class="footer-left">                    
+                    <p class="footer-company-name">@SignMeet <a href="#"></a> 
+					<a href="https://html.design/"></a></p>
+                </div>
+            </div>
+        </div><!-- end container -->
+    </div><!-- end copyrights -->
+
+    <a href="#" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+
+    <!-- ALL JS FILES -->
+    <script src="../static/js/all.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="../static/js/custom.js"></script>
+	<script src="../static/js/zenith.js"></script>
+	<script>
+		$('#default').zenith({
+			layout: 'default' , 
+			slideSpeed: 450, 
+			autoplaySpeed: 2000
+		});
+	</script>
+
+</body>
+</html>

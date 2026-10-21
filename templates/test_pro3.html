@@ -1,0 +1,36 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Sign</title>
+</head>
+
+<body>
+<div align="center">
+
+ 					
+					{% if st=="1" %}
+					  
+					  <h3 align="center">{{val}}</h3>
+					  
+					  <script>
+					  if ("speechSynthesis" in window) {
+					    const utterance = new SpeechSynthesisUtterance({{ val|tojson }});
+					    utterance.lang = {{ lgg|tojson }};
+					    window.speechSynthesis.cancel();
+					    window.speechSynthesis.speak(utterance);
+					  }
+					  </script>
+				
+					{% endif %}
+					    <script>
+						//Using setTimeout to execute a function after 5 seconds.
+						setTimeout(function () {
+						   //Redirect with JavaScript
+						  window.location.href="/test_pro3";
+						}, 4000);
+						</script>  
+					   
+
+</div>
+</body>
+</html>

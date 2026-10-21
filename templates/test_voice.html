@@ -1,0 +1,151 @@
+<html>
+   <head>
+      <!-- Basic -->
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <!-- Mobile Metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      <!-- Site Metas -->
+      <meta name="keywords" content="" />
+      <meta name="description" content="" />
+      <meta name="author" content="" />
+      <link rel="shortcut icon" href="images/favicon.png" type="">
+      <title>Sign Language</title>
+      <!-- bootstrap core css -->
+ <link rel="shortcut icon" href="../static/images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="../static/images/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="../static/style.css">    
+    <!-- ALL VERSION CSS -->
+    <link rel="stylesheet" href="../static/css/versions.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="../static/css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../static/css/custom.css">
+
+<script language="javascript">
+		 function getSubmit()
+		 {
+		 document.getElementById("form1").submit(); 
+		 }
+		 </script>
+
+	  
+	  	<script>
+	function show()
+	{
+	document.getElementById("x1").style.display="block";
+	document.getElementById("x2").style.display="none";
+	}
+	/////////////
+	
+		function startConverting () {
+		
+		document.getElementById("x1").style.display="none";
+	document.getElementById("x2").style.display="block";
+
+		if('webkitSpeechRecognition' in window) {
+			var speechRecognizer = new webkitSpeechRecognition();
+			speechRecognizer.continuous = true;
+			speechRecognizer.interimResults = true;
+			speechRecognizer.lang = 'en-US';
+			speechRecognizer.start();
+
+			var finalTranscripts = '';
+
+			speechRecognizer.onresult = function(event) {
+				var result = document.getElementById('result');
+				var interimTranscripts = '';
+				for(var i = event.resultIndex; i < event.results.length; i++){
+					var transcript = event.results[i][0].transcript;
+					transcript = transcript.replace("\n", " ");
+					if(event.results[i].isFinal) {
+						finalTranscripts += transcript;
+						document.form1.res.value=finalTranscripts;
+					}else{
+						interimTranscripts += transcript;
+					}
+				}
+				result.textContent = finalTranscripts;
+				if (interimTranscripts) {
+					var interim = document.createElement('span');
+					interim.style.color = '#999';
+					interim.textContent = interimTranscripts;
+					result.appendChild(interim);
+				}
+			};
+			speechRecognizer.onerror = function (event) {
+
+			};
+		}else {
+			document.getElementById('result').textContent = 'Your browser does not support speech recognition.';
+		}	
+		}
+	
+	</script> 
+   </head>
+   <body class="app_version" data-spy="scroll" data-target="#navbarApp" data-offset="98">
+      
+				
+                     <form method="post" name="form1" id="form1" action="">
+					 
+					<h5>SR and Speech Synthesis</h5>
+					<img src="../static/images/ava.jpg" class="img-fluid" style="border:3px solid #FF3300">
+							
+					
+						 <div class="row">
+					 	<div class="col-md-2">
+					 	
+							
+								<div id="x1">
+							 <a href="javascript:startConverting();"><i class="fa fa-microphone btn btn-danger" aria-hidden="true"></i></a>
+								</div>
+							
+									<div id="x2" style="display:none">
+								<a href="javascript:show();"> <img src="../static/mic-animate.gif" class="img-fluid"></a>
+								</div>
+						</div>
+						<div class="col-md-3">
+                      		 <input type="text" id="res" class="form-control" placeholder="Voice Message" style="width:200px" name="message" required />
+							 <div id="result"></div>
+							 <button type="submit" class="btn btn-primary">Find sign</button>
+						</div>
+						</div>
+                    
+						<iframe src="/test_voice1" width="5" height="5" frameborder="0"></iframe>
+                     </form>
+               
+	  {% if act=="1" %}
+						<script>
+//Using setTimeout to execute a function after 5 seconds.
+setTimeout(function () {
+   //Redirect with JavaScript
+   window.location.href= '/test_voice';
+}, 8000);
+</script>
+						{% else %}
+						<script>
+//Using setTimeout to execute a function after 5 seconds.
+setTimeout(function () {
+   //Redirect with JavaScript
+  if (document.form1.message.value.trim()) {
+    document.getElementById("form1").submit();
+  }
+}, 10000);
+</script>
+						{% endif %}
+	  
+    
+      <!-- footer section -->
+      <!-- jQery -->
+     <script src="../static/js/all.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="../static/js/custom.js"></script>
+	<script src="../static/js/zenith.js"></script>
+	
+
+   </body>
+</html>
